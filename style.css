@@ -642,14 +642,16 @@ button.next {
 @media (max-width: 480px) {
   .content {
     padding: 10px;
+  
   }
 
   .content h3 {
     font-size: 18px;
+
   }
 
   .content p {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   footer {
