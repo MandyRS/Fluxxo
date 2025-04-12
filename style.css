@@ -66,7 +66,7 @@ header {
   /* Container principal do carrossel */
   .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 999px;
     margin: 30px auto;
     padding: 20px;
     position: relative;
@@ -590,3 +590,73 @@ button.next {
     font-family: sans-serif;
     justify-items: center; /* Centraliza os itens dentro do grid */
   }
+
+  /* Responsividade para .consultoria */
+
+/* 3 colunas em telas grandes */
+@media (min-width: 992px) {
+  .consultoria {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2 colunas em telas médias */
+@media (min-width: 600px) and (max-width: 991px) {
+  .consultoria {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 1 coluna em telas pequenas */
+@media (max-width: 599px) {
+  .consultoria {
+    grid-template-columns: 1fr;
+  }
+}
+/* Telas até 768px (tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content img {
+    max-width: 90%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header h3 {
+    font-size: 18px;
+  }
+
+  .btn-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Telas até 480px (celulares) */
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  .btn-link {
+    font-size: 13px;
+  }
+}

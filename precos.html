@@ -209,6 +209,56 @@ input:focus, select:focus {
 input::placeholder, select {
   color: #0e0d0d;
 }
+
+/* Telas até 768px (tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content img {
+    max-width: 90%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header h3 {
+    font-size: 18px;
+  }
+
+  .btn-link {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Telas até 480px (celulares) */
+@media (max-width: 480px) {
+  .content {
+    padding: 10px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+  .btn-link {
+    font-size: 13px;
+  }
+}
+
+
   </style>
 </head>
 <body>
