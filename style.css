@@ -668,16 +668,29 @@ button.next {
   }
 
   service p {
-    font-size: 12px;
+    font-size: 10px;
   }
   .consultoria_mei p {
+    font-size: 10px;
+  }
+
+  .consultoria_mei h1 {
     font-size: 12px;
   }
 
   .consultoria p {
+    font-size: 10px;
+  }
+
+  .consultoria h3 {
     font-size: 12px;
   }
+
   .controle_financeiro_familiar p {
+    font-size: 10px;
+  }
+
+  .content11 h1 {
     font-size: 12px;
   }
 }
