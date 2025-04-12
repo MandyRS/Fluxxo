@@ -667,15 +667,19 @@ button.next {
     font-size: 13px;
   }
 
-  service p {
+  .service p {
     font-size: 10px;
   }
   .consultoria_mei p {
     font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .consultoria_mei h1 {
     font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .consultoria p {
