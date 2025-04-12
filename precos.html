@@ -212,9 +212,37 @@ input::placeholder, select {
 
 /* Telas até 768px (tablets e celulares em modo paisagem) */
 @media (max-width: 768px) {
+  
   nav ul {
     flex-direction: column;
     align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 28px;
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    left: 10px; /* alinhado com o botão */
+    background-color: #2f6b0a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    
   }
 
   .content img {
@@ -273,13 +301,17 @@ input::placeholder, select {
 <body>
 
   <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="precos.html">Catálogo</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ul>
-</nav>
+
+    <button class="menu-toggle" id="btn-menu">
+      ☰
+    </button>
+          <ul class="nav-links" id="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="precos.html">Catálogo</a></li>
+              <li><a href="contato.html">Contato</a></li>
+          </ul>
+      </nav>
 <h1>Escolha suas planilhas</h1>
 <p style="text-align: center; font-size: 18px;">Clique em "Adicionar ao Carrinho" para selecionar as planilhas que deseja comprar.</p>
 
@@ -394,6 +426,15 @@ input::placeholder, select {
     const url = `https://wa.me/${numero}?text=${mensagem}`;
     window.open(url, '_blank');
   }
+
+  document.getElementById('btn-menu').addEventListener('click', function() {
+    const navLinks = document.getElementById('nav-links');
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+    } else {
+      navLinks.style.display = 'flex';
+    }
+  });
 </script>
 
 </body>

@@ -10,7 +10,11 @@
 <body>
 
 <nav>
-        <ul>
+
+  <button class="menu-toggle" id="btn-menu">
+    ☰
+  </button>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="servicos.html">Serviços</a></li>
             <li><a href="precos.html">Catálogo</a></li>
@@ -95,6 +99,7 @@
   const contentWidth = $contents.outerWidth(true);
   const totalContent = $contents.length;
 
+
   let currentIndex = 1;
   let autoScrollInterval;
 
@@ -170,10 +175,13 @@
   });
 
   $('.container').hover(stopAutoScroll, startAutoScroll);
+  $('#btn-menu').on('click', function () {
+        $('#nav-links').toggleClass('show');
+  });
 });
 
 </script>
 
-  </script>
+
 </body>
 </html>

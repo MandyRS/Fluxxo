@@ -160,6 +160,48 @@ header {
     align-items: center;
   }
 
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    font-size: 28px;
+    color: white;
+    margin-left: 15px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    left: 10px; /* alinhado com o botão */
+    background-color: #2f6b0a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    
+  }
+
+  .body-no-scroll {
+    overflow: hidden;
+  }
+  
+
+  .nav-links.show {
+    display: flex;
+  }
+
+
   .content img {
     max-width: 90%;
   }
@@ -207,14 +249,18 @@ header {
 </head>
 <body>
 
-<nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="precos.html">Catálogo</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+  <nav>
+
+    <button class="menu-toggle" id="btn-menu">
+      ☰
+    </button>
+          <ul class="nav-links" id="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="servicos.html">Serviços</a></li>
+              <li><a href="precos.html">Catálogo</a></li>
+              <li><a href="contato.html">Contato</a></li>
+          </ul>
+      </nav>
 
 <div class="container">
 
@@ -244,6 +290,32 @@ header {
       </footer>
       
 <script>
+const btnMenu = document.getElementById('btn-menu');
+const navLinks = document.getElementById('nav-links');
+
+btnMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  
+  // Bloquear/desbloquear rolagem da página
+  if (navLinks.classList.contains('show')) {
+    document.body.classList.add('body-no-scroll');
+  } else {
+    document.body.classList.remove('body-no-scroll');
+  }
+});
+
+// Fechar menu ao clicar fora
+window.addEventListener('click', function (event) {
+  if (
+    navLinks.classList.contains('show') &&
+    !navLinks.contains(event.target) &&
+    event.target !== btnMenu
+  ) {
+    navLinks.classList.remove('show');
+    document.body.classList.remove('body-no-scroll');
+  }
+});
+
         // Bloqueia letras no campo de telefone
 document.getElementById("telefone").addEventListener("input", function (e) {
 this.value = this.value.replace(/\D/g, ""); // Remove tudo que não é dígito
