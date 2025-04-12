@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <header>
+
+        <h1>Bem-vindo ao Fluxxo! </h1> <br>
+        <h3>Seu parceiro em soluções financeiras e de gestão.</h3>
+    </header>
+
+
+  <div class="container" id="container">
+       <!--  <button class="prev">Anterior</button>-->
+    <div class="container-wrapper">
+      <div class="carousel">
+        <div class="content">
+          <img src="./img/controle_estoque.png" alt="Controle de Estoque">
+          <h3>Controle de Estoque</h3>
+          <p>Tenha total controle dos seus produtos, evite perdas e maximize lucros.</p>
+        </div>
+        <div class="content">
+          <img src="./img/entradas_saidas.png" alt="Controle de Entradas e Saídas">
+          <h3>Controle de Entradas e Saídas</h3>
+          <p>Registre tudo que entra e sai do seu caixa com simplicidade e precisão.</p>
+        </div>
+        <div class="content">
+          <img src="./img/controle_financeiro.png" alt="Controle Financeiro">
+          <h3>Controle Financeiro</h3>
+          <p>Organize suas finanças e tome decisões com segurança.</p>
+        </div>
+        <div class="content">
+          <img src="./img/controle_familiar.png" alt="Controle Financeiro Familiar">
+          <h3>Controle Financeiro Familiar</h3>
+          <p>Traga equilíbrio para as finanças do seu lar.</p>
+        </div>
+        <div class="content">
+          <img src="./img/graficos_informativos.png" alt="Gráficos e Informativos">
+          <h3>Gráficos e Informativos</h3>
+          <p>Visualize seu progresso com gráficos e relatórios inteligentes.</p>
+        </div>
+        <div class="content">
+          <img src="./img/controle_servicos.png" alt="Controle de Serviços Prestados">
+          <h3>Controle de Serviços Prestados</h3>
+          <p>Controle sua gestão de serviços prestados e organize sua gestão.</p>
+        </div>
+        <div class="content">
+          <img src="./img/cadastro_clientes_fornecedores.png" alt="Cadastro de Clientes e Fornecedores">
+          <h3>Cadastro de Clientes e Fornecedores</h3>
+          <p>Mantenha os dados dos seus clientes e fornecedores sempre atualizados.</p>
+        </div>
+        <div class="content">
+          <img src="./img/consultoria_mei.png" alt="Consultoria Financeira para MEI - Comércio e Serviço">
+          <h3>Consultoria Financeira para MEI - Comércio e Serviço</h3>
+          <p>Atendimento especializado para quem é MEI e quer crescer com segurança.</p>
+        </div>
+        <div class="content">
+          <img src="./img/gestao_obrigacoes_mei.png" alt="Gestão de Obrigações do MEI">
+          <h3>Gestão de Obrigações do MEI</h3>
+          <p>Painel com lembrete da DAS mensal, relatório de receitas brutas e acompanhamento das obrigações fiscais do MEI. Evite multas e mantenha-se regularizado.</p>
+        </div>
+      </div>
+    </div>
+        <!-- <button class="next">Próximo</button>-->
+  </div>
+
+  <div class="content11"> 
+    <a href="servicos.html" class="btn-link">E muito mais!</a>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
+    <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
+  </footer>
+
+  <script>
+  $(document).ready(function () {
+  const $carousel = $('.carousel');
+  const $contents = $('.content');
+  const contentWidth = $contents.outerWidth(true);
+  const totalContent = $contents.length;
+
+  let currentIndex = 1;
+  let autoScrollInterval;
+
+  // Clona o primeiro e o último
+  const $firstClone = $contents.first().clone();
+  const $lastClone = $contents.last().clone();
+
+  $carousel.append($firstClone);
+  $carousel.prepend($lastClone);
+
+  // Define a nova largura com os clones
+  $carousel.css('width', contentWidth * (totalContent + 2));
+
+  // Posiciona no primeiro conteúdo real
+  $carousel.css('transform', `translateX(-${contentWidth * currentIndex}px)`);
+
+  function moveCarousel() {
+    $carousel.css({
+      transition: 'transform 0.5s ease-in-out',
+      transform: `translateX(-${contentWidth * currentIndex}px)`
+    });
+  }
+
+  function nextContent() {
+    currentIndex++;
+    moveCarousel();
+
+    if (currentIndex === totalContent + 1) {
+      // Quando chega no clone do primeiro
+      setTimeout(() => {
+        $carousel.css('transition', 'none');
+        currentIndex = 1;
+        $carousel.css('transform', `translateX(-${contentWidth * currentIndex}px)`);
+      }, 500);
+    }
+  }
+
+  function prevContent() {
+    currentIndex--;
+    moveCarousel();
+
+    if (currentIndex === 0) {
+      // Quando chega no clone do último
+      setTimeout(() => {
+        $carousel.css('transition', 'none');
+        currentIndex = totalContent;
+        $carousel.css('transform', `translateX(-${contentWidth * currentIndex}px)`);
+      }, 500);
+    }
+  }
+
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(nextContent, 5000);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  // Iniciar rolagem automática
+  startAutoScroll();
+
+  $('.next').click(function () {
+    stopAutoScroll();
+    nextContent();
+    startAutoScroll();
+  });
+
+  $('.prev').click(function () {
+    stopAutoScroll();
+    prevContent();
+    startAutoScroll();
+  });
+
+  $('.container').hover(stopAutoScroll, startAutoScroll);
+});
+
+</script>
+
+  </script>
+</body>
+</html>

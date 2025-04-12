@@ -1,0 +1,592 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #346603;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;            /* Coloca os <li> lado a lado */
+    list-style: none;         /* Remove as bolinhas */   
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block;           /* Permite que o padding funcione como caixa */
+    margin: 15px 0;         /* Espaço entre os itens */
+    font-size: 18px;        /* Tamanho da fonte */
+}
+
+nav a:hover {
+    background-color: #4a8b04;
+    
+}
+
+header {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #4a8b04;
+}
+
+.banner {
+
+    margin-left: 80px;
+}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body base */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  /* Container principal do carrossel */
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #fff;
+  }
+  
+  /* Área visível do carrossel */
+  .container-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Faixa de rolagem */
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  
+  /* Cada card */
+  .content {
+    flex: 0 0 auto;
+    width: 300px;
+    margin: 30px 10px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+  
+  .content img {
+    width: 130px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 5px;
+  }
+  
+  /* Título do card */
+  .content h3 {
+    font-size: 20px;
+    color: #00a651;
+    margin-bottom: 10px;
+  }
+  
+  /* Texto do card */
+  .content p {
+    font-size: 16px;
+    color: #444;
+  }
+  
+button.prev,
+button.next {
+  position: fixed; /* <- muda de absolute para fixed */
+  top: 55%;
+  transform: translateY(-50%);
+  background-color: #4a8b04;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  z-index: 9999; /* garante que fique sempre visível */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.prev:hover,
+button.next:hover {
+  background-color: #507027;
+}
+
+button.prev {
+  left: 300px; /* grudado na lateral esquerda */
+}
+
+button.next {
+  right: 300px; /* grudado na lateral direita */
+}
+
+  
+  /* Mensagem extra abaixo do carrossel */
+  .content11 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+  }
+  
+  .content11 h3 {
+    font-size: 26px;
+    color: #222;
+    font-weight: 600;
+    
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px;
+    background-color: #dfe4ea;
+    color: #495057;
+    font-size: 14px;
+  }
+  
+  footer a {
+    color: #4a8b04;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 1024px) {
+    .content {
+      width: 260px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      width: 220px;
+    }
+  
+    button.prev,
+    button.next {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content {
+      width: 200px;
+      padding: 15px;
+    }
+  
+    .content h3 {
+      font-size: 18px;
+    }
+  
+    .content p {
+      font-size: 13px;
+    }
+  
+    button.prev,
+    button.next {
+      padding: 8px 14px;
+    }
+  }
+  
+  .btn-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4a8b04;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-link:hover {
+    background-color: #507027;
+    color: #ffffff;
+  }
+
+ /* Grade de serviços - organiza os cards lado a lado */
+ .servicos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaço entre os cards */
+    max-width: 1200px; /* Largura máxima do grid */
+    margin: 30px auto; /* Centraliza horizontalmente */
+    padding: 0 20px;
+    font-family: sans-serif;
+    justify-items: center; /* Centraliza os itens dentro do grid */
+    
+  }
+  
+
+  /* 3 por linha em telas grandes */
+@media (min-width: 992px) {
+    .servicos {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* 2 por linha em telas médias */
+  @media (min-width: 600px) and (max-width: 991px) {
+    .servicos {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 1 por linha em telas pequenas */
+  @media (max-width: 599px) {
+    .servicos {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  /* Cada card individual de serviço */
+  .service {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+  
+    width: 100%;
+    height: 440px;         /* ALTURA FIXA PADRONIZADA */
+    max-width: 360px;      /* LARGURA PADRÃO DOS CARDS */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+      
+  
+  
+  /* Efeito ao passar o mouse */
+  .service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Imagem do serviço */
+  .service img {
+    width: 130px;
+    height: 130px; /* Altura fixa para manter a proporção */
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Título do serviço */
+  .service h3 {
+    font-size: 20px;
+    color: #00a651;
+    margin-bottom: 10px;
+  }
+
+  .descricao {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 0;
+    max-height: 130px;
+    overflow: hidden; /* evita que quebre o layout */
+  }
+  
+  /* Descrição do serviço */
+  .descricao p {
+    font-size: 14px;
+    color: #050505;
+    margin: 0;
+    line-height: 1.4;
+  }
+  
+  .consultoria_mei {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: #4a8b04;
+}
+
+  /* Título do serviço */
+  .consultoria_mei h1 {
+    
+    color: #00a651;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+  
+  /* Descrição do serviço */
+  .consultoria_mei p {
+    font-size: 16px;
+    color: #0a0a0a;
+  }
+
+.controle_financeiro_familiar {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: #4a8b04;
+}
+
+  /* Título do serviço */
+.controle_financeiro_familiar h1 {
+    
+    color: #00a651;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+  
+  /* Descrição do serviço */
+.controle_financeiro_familiar p {
+    font-size: 16px;
+    color: #0a0a0a;
+  }
+
+.content11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    color: #4a8b04;
+}
+
+  /* Título do serviço */
+.content11 h1 {
+    
+    color: #00a651;
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+
+.content11 p {
+    font-size: 16px;
+    color: #0a0a0a;
+    margin-bottom: 20px;
+}
+
+.container-contato {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .container-contato h2 {
+    text-align: center;
+    color: #4a8b04;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input, textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px;
+    background-color: #00a651;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #008f46;
+  }
+
+  @media (max-width: 480px) {
+    .container-contato {
+      padding: 20px;
+    }
+  }
+/* Modal base */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Conteúdo do modal */
+  .modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 88%;
+    max-width: 1400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .body-no-scroll {
+    overflow: hidden;
+  }
+  
+  
+  /* Botão de fechar */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .close:hover {
+    color: #333;
+  }
+  
+  .open-modal {
+    background-color: #00a651;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 20px auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-self: center; /* Garante centralização */
+  }
+  
+  .open-modal:hover {
+    background-color: #008f46; /* Tom mais escuro no hover */
+    transform: scale(1.03); /* Leve aumento no hover */
+  }
+  
+  .mei {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+  
+    width: 100%;
+    height: 350px;         /* ALTURA FIXA PADRONIZADA */
+    max-width: 360px;      /* LARGURA PADRÃO DOS CARDS */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    }
+      
+  
+  
+  /* Efeito ao passar o mouse */
+  .mei:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Imagem do serviço */
+  .mei img {
+    width: 130px;
+    height: 130px; /* Altura fixa para manter a proporção */
+    border-radius: 12px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+  
+  /* Título do serviço */
+  .mei h3 {
+    font-size: 20px;
+    color: #00a651;
+    
+  }
+  
+  /* Descrição do serviço */
+  .mei p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  .consultoria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaço entre os cards */
+    max-width: 1200px; /* Largura máxima do grid */
+    margin: 30px auto; /* Centraliza horizontalmente */
+    padding: 0 20px;
+    font-family: sans-serif;
+    justify-items: center; /* Centraliza os itens dentro do grid */
+  }

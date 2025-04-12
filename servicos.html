@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serviços</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="precos.html">Catálogo</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <header>
+
+        <h1>Serviços </h1> <br>
+        <h3>Qual serviço mais se encaixa para sua empresa?</h3>
+    </header>
+
+    <div class="servicos">
+        
+      <div class="service">
+        <img src="./img/controle_estoque.png" alt="Controle de Estoque">
+        <h3>Controle de Estoque</h3>
+      <div class="descrição">
+        <p>
+          Evite perdas e saiba o que precisa repor;</p>
+        <p>  Cadastro de produtos com estoque mínimo;</p>
+        <p>  Entrada e saída de mercadorias; </p>
+        <p>  Alerta automático de reposição.
+        </p>
+
+      </div>
+        <button class="open-modal" data-modal="modal-estoque">Ver Exemplo</button>
+      </div>
+      
+      <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-estoque">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha de Estoque</h3>
+          <img src="./img/estoque.png" alt="Planilha de Estoque" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+      
+
+        <div class="service">
+
+            <img src="./img/entradas_saidas.png" alt="Controle de Entradas e Saídas">
+            <h3>Controle de Vendas</h3>
+            <p>Visualize seus resultados com clareza;</p>
+            <p>Lançamento de vendas por produto ou serviço;</p>
+            <p>Total por dia, mês e vendedor (se houver);</p>
+            <p>Gráficos de desempenho.</p>
+                <button class="open-modal" data-modal="modal-saidas">Ver Exemplo</button>
+          </div>
+        
+        <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-saidas">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Controle de Vendas</h3>
+          <img src="./img/vendas.png" alt="Planilha Entradas e Saidas" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+        
+          <div class="service">
+            <img src="./img/controle_financeiro.png" alt="Controle Financeiro">
+            <h3>Controle Financeiro</h3>
+            <p>Controle de contas a pagar e receber;<br>
+                Lançamento de despesas fixas e variáveis;<br>
+                Relatório de contas a pagar e receber;<br>
+                Gráficos de desempenho.</p>
+                <button class="open-modal" data-modal="modal-financeiro">Ver Exemplo</button>      
+    
+          </div>
+
+          <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-financeiro">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha Controle Financeiro</h3>
+          <img src="./img/compras.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+          
+          <div class="service">
+            <img src="./img/graficos_informativos.png" alt="Gráficos e Informativos">
+            <h3>Gráficos e Informativos</h3>
+            <p>Visualize seu progresso com gráficos e relatórios inteligentes.</p>
+            <button class="open-modal" data-modal="modal-informativos">Ver Exemplo</button>
+          </div>
+
+        <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-informativos">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha de Gráficos e Informativos</h3>
+          <img src="./img/relatorio.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+
+          <div class="service">
+            <img src="./img/cadastro_clientes_fornecedores.png" alt="Cadastro de Clientes e Fornecedores">
+            <h3>Controle de Clientes e Fornecedores</h3>
+            <p> Dados de clientes e forncedores sempre atualizados;<br>
+                
+
+                Controle de inadimplência.</p> 
+                <button class="open-modal" data-modal="modal-fornecedores">Ver Exemplo</button>
+          </div>
+
+      <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-fornecedores">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha de Controle de Clientes e Fornecedores</h3>
+          <img src="./img/cliente.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+
+        <div class="service">
+            <img src="./img/controle_servicos.png" alt="Controle de Serviços Prestados">
+            <h3>Controle de Serviços Prestados</h3>
+            <p> Cadastro de serviços prestados;<br>
+                Relatório de serviços prestados;<br>
+                Controle de horas trabalhadas;<br>
+                Controle de produtos utilizados.</p>
+                <button class="open-modal" data-modal="modal-serviços">Ver Exemplo</button>
+        </div>
+
+        <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-serviços">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha de Controle de Serviços Prestados</h3>
+          <img src="./img/serviços.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+
+        <div class="service">
+            <img src="./img/precificacao.png" alt="Controle de Serviços Prestados">
+            <h3>Controle de precificação</h3>
+            <p> Descubra o preço ideal dos seus produtos e serviços.</p>
+      
+              <p>Margem de contribuição e ponto de equilíbrio;</p>
+               <p> Simulador de combos e pacotes.</p>
+                <button class="open-modal" data-modal="modal-precificacao">Ver Exemplo</button>
+             </div>
+
+        <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-precificacao">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha de Controle de precificação</h3>
+          <img src="./img/preco.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+        
+        <div class="service">
+            <img src="./img/comissao.png" alt="Controle de Serviços Prestados">
+            <h3>Controle de comissões</h3>
+            <p> Acompanhe o quanto cada vendedor está ganhando.</p>
+            <p>    Cadastro de vendedores e percentuais de comissão;</p>
+        
+            <p>    Relatório mensal de comissões.</p>
+                <button class="open-modal" data-modal="modal-comissao">Ver Exemplo</button>
+        </div>
+
+        <!-- Modal (fora do card) -->
+      <div class="modal" id="modal-comissao">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Exemplo de Planilha de Controle de comissões</h3>
+          <img src="./img/comissao-ft.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+        </div>
+      </div>
+
+        <div class="service">
+            <img src="./img/funcionarios.png" alt="Controle de Serviços Prestados">
+            <h3>Controle de Funcionários</h3>
+            <p>Organize sua equipe com facilidade.<br>
+                Cadastro de funcionários;<br>
+                Controle de ponto e faltas;<br>
+                Férias e documentos vencidos.</p>
+                <button class="open-modal" data-modal="modal-funcionarios">Ver Exemplo</button>
+        </div>
+    </div>
+
+    <!-- Modal (fora do card) -->
+    <div class="modal" id="modal-funcionarios">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Exemplo de Planilha de Controle de Funcionários</h3>
+        <img src="./img/funcionario.png" alt="Planilha Controle Financeiro" style="width: 100%; border-radius: 5px;">
+      </div>
+    </div>
+
+    <div class="consultoria_mei">
+        <h1>Consultoria MEI</h1>
+        <p>Atendimento especializado para quem é MEI e quer crescer com segurança.</p>
+        
+    </div>
+
+        
+    <div class="consultoria">          
+          <div class="mei">
+            <img src="./img/consultoria_mei.png" alt="Consultoria Financeira para MEI - Comércio e Serviço">
+            <h3>Consultoria Financeira para MEI - Comércio e Serviço</h3>
+            <p>Atendimento especializado para quem é MEI e quer crescer com segurança.</p>
+          </div>
+          <div class="mei">
+            <img src="./img/gestao_obrigacoes_mei.png" alt="Gestão de Obrigações do MEI">
+            <h3>Gestão de Obrigações do MEI</h3>
+            <p>Painel com lembrete da DAS mensal, relatório de receitas brutas e acompanhamento das obrigações fiscais do MEI. Evite multas e mantenha-se regularizado.</p>
+          </div>
+
+    </div>
+
+    <div class="controle_financeiro_familiar">
+        <h1>Controle Financeiro Familiar</h1>
+        <p>Traga equilíbrio para as finanças do seu lar.</p>
+            
+    </div>
+
+    <div class="consultoria">   
+
+          <div class="mei">
+            <img src="./img/controle_familiar.png" alt="Controle Financeiro Familiar">
+            <h3>Controle Financeiro Familiar</h3>
+            <p>Traga equilíbrio para as finanças do seu lar.</p>
+          </div>
+    </div>
+
+    <div class="content11"> 
+        <h1>Entre em contato</h1>
+        <p>Quer saber mais sobre nossos serviços? Entre em contato conosco!</p>
+        <a href="contato.html" class="btn-link">Fale Conosco</a>
+    
+      </div>
+
+
+    <footer>
+        <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
+      </footer>
+
+      <script>
+        // Abrir modal
+        document.querySelectorAll('.open-modal').forEach(button => {
+          button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+              modal.style.display = 'block';
+              document.body.classList.add('body-no-scroll'); // desativa rolagem
+            }
+          });
+        });
+      
+        // Fechar modal ao clicar no "X"
+        document.querySelectorAll('.modal .close').forEach(closeBtn => {
+          closeBtn.addEventListener('click', () => {
+            closeBtn.closest('.modal').style.display = 'none';
+          });
+        });
+      
+        // Fechar ao clicar fora do conteúdo
+        window.addEventListener('click', function (event) {
+          document.querySelectorAll('.modal').forEach(modal => {
+            if (event.target === modal) {
+              modal.style.display = 'none';
+              document.body.classList.remove('body-no-scroll'); // ativa rolagem de novo
+            }
+          });
+        });
+      </script>
+           

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planilhas à Venda</title>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    
+  * {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #346603;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    display: flex;            /* Coloca os <li> lado a lado */
+    list-style: none;         /* Remove as bolinhas */   
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block;           /* Permite que o padding funcione como caixa */
+    margin: 15px 0;         /* Espaço entre os itens */
+    font-size: 18px;        /* Tamanho da fonte */
+}
+
+nav a:hover {
+    background-color: #4a8b04;
+    
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #222;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 35px;
+    padding: 20px;
+    background-color: #dfe4ea;
+    color: #495057;
+    font-size: 14px;
+  }
+  
+  footer a {
+    color: #4a8b04;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+
+    h1 {
+      text-align: center;
+      color: #4a8b04;
+      margin: 40px 0 20px;
+    }
+
+    .vitrine {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .planilha-card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 30px 20px;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 260px;
+    }
+
+    .planilha-card:hover {
+      transform: scale(1.03);
+    }
+
+    .planilha-card h3 {
+      margin-bottom: 10px;
+      color: #00a651;
+      font-size: 18px;
+    }
+
+    .planilha-card .preco {
+      font-weight: bold;
+      color: #e67e22;
+      font-size: 16px;
+    }
+
+    .planilha-card button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #00a651;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .planilha-card button:hover {
+      background-color: #008b42;
+    }
+
+    .carrinho {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 800px;
+
+    }
+
+    .carrinho-lista {
+      background: #ffffff;
+      padding: 40px;
+      margin: 10px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .carrinho-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      align-items: center;
+    }
+
+    .carrinho button {
+      padding: 12px 24px;
+      background-color: #4a8b04;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .carrinho button:hover {
+      background-color: #3a6e03;
+    }
+
+    /* Estilo para os labels */
+    label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;  /* Garante que o label ocupe toda a largura disponível */
+  margin-top: 15px; /* Espaçamento entre os elementos */
+  margin-left: 20px; /* Espaçamento à esquerda */
+  margin-right: 20px; /* Espaçamento à direita */
+  text-align: center; /* Centraliza o texto do label */
+}
+
+/* Estilo para os inputs e selects */
+input, select {
+  width: 80%;  /* Define a largura do input/select para 80% da tela */
+  max-width: 400px;  /* Limita a largura máxima para 400px */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+  margin-bottom: 20px; /* Espaço entre os campos */
+  display: block;  /* Garante que o input ocupe toda a largura disponível */
+  margin-left: auto;
+  margin-right: auto; /* Centraliza o input/select na tela */
+  text-align: center; /* Alinha o texto dentro do input/select */
+}
+
+/* Estilo de foco para inputs e selects */
+input:focus, select:focus {
+  border-color: #4a8b04;
+  outline: none; /* Remove o contorno padrão */
+  box-shadow: 0 0 5px rgba(107, 163, 43, 0.5); /* Destaque ao focar no campo */
+}
+
+/* Estilo do Placeholder */
+input::placeholder, select {
+  color: #0e0d0d;
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="precos.html">Catálogo</a></li>
+        <li><a href="contato.html">Contato</a></li>
+    </ul>
+</nav>
+<h1>Escolha suas planilhas</h1>
+<p style="text-align: center; font-size: 18px;">Clique em "Adicionar ao Carrinho" para selecionar as planilhas que deseja comprar.</p>
+
+<div>
+  <label for="nome-cliente">Nome:</label>
+  <input type="text" id="nome-cliente" placeholder="Digite seu nome">
+</div>
+<div>
+  <label for="forma-pagamento">Forma de Pagamento:</label>
+  <select id="forma-pagamento">
+    <option value="Pix">Pix</option>
+    <option value="Cartão de Crédito">Cartão de Crédito</option>
+    <option value="Cartão de Débito">Cartão de Débito</option>
+    <option value="Boleto">Boleto</option>
+  </select>
+</div>
+
+<div class="vitrine" id="vitrine"></div>
+
+<div class="carrinho">
+  <div class="carrinho-lista" id="lista-carrinho"></div>
+  <button onclick="enviarCarrinhoWhatsApp()">Enviar pedido no WhatsApp</button>
+</div>
+
+<footer>
+  <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
+  <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
+</footer>
+
+<script>
+  const planilhas = [
+    { nome: "Controle de Estoque", preco: "100,00" },
+    { nome: "Controle de Vendas", preco: "80,00" },
+    { nome: "Controle Financeiro", preco: "80,00" },
+    { nome: "Gráficos e Informativos", preco: "80,00" },
+    { nome: "Controle de Clientes e Fornecedores", preco: "100,00" },
+    { nome: "Controle de Serviços Prestados", preco: "70,00" },
+    { nome: "Controle de Preços e Margem", preco: "70,00" },
+    { nome: "Controle de Comissões", preco: "60,00" },
+    { nome: "Controle de Funcionários", preco: "60,00" },
+    { nome: "Controle de Despesas Mensais", preco: "80,00" },
+    { nome: "Controle de Orçamento Familiar", preco: "80,00" },
+    { nome: "Controle de Dívidas e Pagamentos", preco: "80,00" },
+    { nome: "Consultoria MEI - Comércio e Serviço", preco: "100,00" },
+    { nome: "Gestão de Obrigações do MEI", preco: "80,00" },
+    { nome: "Controle Financeiro Familiar", preco: "80,00" }
+  ];
+
+  const carrinho = [];
+  const vitrine = document.getElementById('vitrine');
+  const listaCarrinho = document.getElementById('lista-carrinho');
+
+  planilhas.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'planilha-card';
+    card.innerHTML = `
+      <h3>${p.nome}</h3>
+      <div class="preco">R$ ${p.preco}</div>
+      <button onclick="adicionarAoCarrinho('${p.nome}', '${p.preco}')">Adicionar ao Carrinho</button>
+    `;
+    vitrine.appendChild(card);
+  });
+
+  function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    atualizarCarrinho();
+  }
+
+  function atualizarCarrinho() {
+    listaCarrinho.innerHTML = '<h4>Itens no Carrinho:</h4>';
+    carrinho.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'carrinho-item';
+      div.innerHTML = `
+        <span>${item.nome} (R$ ${item.preco})</span>
+        <button onclick="removerDoCarrinho(${index})">Remover</button>
+      `;
+      listaCarrinho.appendChild(div);
+    });
+  }
+
+  function removerDoCarrinho(index) {
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
+  }
+
+  function enviarCarrinhoWhatsApp() {
+    const nomeCliente = document.getElementById('nome-cliente').value;
+    const formaPagamento = document.getElementById('forma-pagamento').value;
+
+    if (!nomeCliente) {
+      alert('Por favor, informe seu nome.');
+      return;
+    }
+
+    if (carrinho.length === 0) {
+      alert('Seu carrinho está vazio.');
+      return;
+    }
+
+    const numero = "558388370632";
+    let mensagem = `Olá, meu nome é ${nomeCliente} e minha forma de pagamento é ${formaPagamento}. Gostaria de comprar as seguintes planilhas:%0A`;
+    let total = 0;
+
+    carrinho.forEach(item => {
+      mensagem += `- ${item.nome} (R$ ${item.preco})%0A`;
+      total += parseFloat(item.preco.replace(',', '.'));
+    });
+
+    mensagem += `%0ATotal: R$ ${total.toFixed(2).replace('.', ',')}`;
+
+    const url = `https://wa.me/${numero}?text=${mensagem}`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
