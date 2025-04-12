@@ -697,8 +697,10 @@ button.next {
   }
 
   
-  .controle_financeiro_familiar h3 {
-    font-size: 18px;
+  .controle_financeiro_familiar h1 {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .content11 h1 {
