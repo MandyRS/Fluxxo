@@ -672,29 +672,36 @@ button.next {
   }
   .consultoria_mei p {
     font-size: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   .consultoria_mei h1 {
-    font-size: 12px;
+    font-size: 20px;
     margin-left: 10px;
     margin-right: 10px;
   }
 
   .consultoria p {
     font-size: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   .consultoria h3 {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .controle_financeiro_familiar p {
     font-size: 10px;
   }
 
+  
+  .controle_financeiro_familiar h3 {
+    font-size: 18px;
+  }
+
   .content11 h1 {
-    font-size: 12px;
+    font-size: 20px;
   }
 }
