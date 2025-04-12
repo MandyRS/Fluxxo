@@ -586,6 +586,11 @@ button.next {
     
   }
   
+  /* Classe para bloquear a rolagem */
+.no-scroll {
+  overflow: hidden;
+}
+
   /* Descrição do serviço */
   .mei p {
     font-size: 16px;
