@@ -12,7 +12,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #346603;
+  background-color: #00b3b3;
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   height: calc(7.5rem - 2rem); /* Altura do header */
   display: flex;
@@ -65,7 +65,7 @@ nav a {
 
 nav .contato{
   border-radius: 8px;
-  background-color: #4a8b04;
+  background-color: #07e0ce;
 }
 
 nav .material-icons-sharp {
@@ -87,192 +87,135 @@ nav .material-icons-sharp {
   /* Body base */
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
+    background-color: #fff;
     color: #222;
     line-height: 1.6;
   }
-  
-  /* Container principal do carrossel */
-  .container {
-    width: 100%;
-    max-width: 999px;
-    margin: 30px auto;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    background-color: #fff;
-  }
-  
-  /* Área visível do carrossel */
-  .container-wrapper {
-    overflow: hidden;
-    width: 100%;
-  }
-  
-  /* Faixa de rolagem */
-  .carousel {
+
+  .intro {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
   }
   
-  /* Cada card */
-  .content {
-    flex: 0 0 auto;
-    width: 300px;
-    margin: 30px 10px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .intro.show {
+    opacity: 1;
+    transform: translateY(0);
   }
   
-  .content:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  }
-  
-  .content img {
-    width: 130px;
+  .intro .img img {
+    max-width: 600px;
     height: auto;
-    border-radius: 12px;
-    margin-bottom: 5px;
+    
+    transform: translateX(-110px);
   }
   
-  /* Título do card */
-  .content h3 {
-    font-size: 20px;
-    color: #00a651;
-    margin-bottom: 10px;
+  .intro h1 {
+    font-size: 32px;
+    color: #02af98;
+    margin-bottom: 20px;
   }
   
-  /* Texto do card */
-  .content p {
-    font-size: 16px;
-    color: #444;
+  .intro p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.6;
   }
   
-button.prev,
-button.next {
-  position: fixed; /* <- muda de absolute para fixed */
-  top: 55%;
-  transform: translateY(-50%);
-  background-color: #4a8b04;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 8px;
-  z-index: 9999; /* garante que fique sempre visível */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button.prev:hover,
-button.next:hover {
-  background-color: #507027;
-}
-
-button.prev {
-  left: 300px; /* grudado na lateral esquerda */
-}
-
-button.next {
-  right: 300px; /* grudado na lateral direita */
-}
-
+  .intro-content {
+    flex: 1;
+  }
   
-  /* Mensagem extra abaixo do carrossel */
+  .img {
+    flex-shrink: 0;
+  }
+  
   .content11 {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
-  }
-  
-  .content11 h3 {
-    font-size: 26px;
-    color: #222;
-    font-weight: 600;
-    
-  }
-  
-  /* Rodapé */
-  footer {
-    text-align: center;
-    margin-top: 35px;
-    padding: 20px;
-    background-color: #dfe4ea;
-    color: #495057;
-    font-size: 14px;
-  }
-  
-  footer a {
-    color: #4a8b04;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 1024px) {
-    .content {
-      width: 260px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .content {
-      width: 220px;
-    }
-  
-    button.prev,
-    button.next {
-      padding: 10px 16px;
-      font-size: 14px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .content {
-      width: 200px;
-      padding: 15px;
-    }
-  
-    .content h3 {
-      font-size: 18px;
-    }
-  
-    .content p {
-      font-size: 13px;
-    }
-  
-    button.prev,
-    button.next {
-      padding: 8px 14px;
-    }
+    margin-top: 30px;
   }
   
   .btn-link {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #4a8b04;
-    color: white;
-    text-decoration: none;
+    background-color: #05dfc2;
+    color: #fff;
+    margin:5px 10px;
     border-radius: 8px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    transition: background 0.3s ease;
   }
   
   .btn-link:hover {
-    background-color: #507027;
-    color: #ffffff;
+    background-color: #026a60;
+  }
+
+  .next {
+    display:flex;
+    justify-content: center;
+    margin-bottom:30px;
+    opacity: 0;
+    transform:translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .next.show {
+    opacity:1;
+    transform: translateY(0);
+
+  }
+  .circle {
+    position: fixed;      /* Fixa o elemento na tela */
+    bottom: 20px;         /* Distância do fundo da tela */
+    right: 20px;          /* Distância da lateral direita */
+    width: 80px;          /* Largura do círculo */
+    height: 10px;         /* Altura do círculo */
+    background-color: none; /* Cor de fundo */
+    display: flex;        /* Alinha o conteúdo no centro */
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;      /* Tamanho do ícone/texto */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    z-index: 0;         /* Garante que fique acima dos outros elementos */
+  
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    margin-bottom:0; 
+    padding: 20px;
+    background-color: #dfe4ea;
+    color: #000000;
+    font-size: 14px;
+    opacity: 0;
+    transform:translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  footer a {
+    color: #06c5b5;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  footer.show {
+    opacity:1;
+    transform: translateY(0);
+
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
   }
 
  /* Grade de serviços - organiza os cards lado a lado */
