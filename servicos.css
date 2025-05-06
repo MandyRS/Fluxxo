@@ -84,13 +84,14 @@ header nav .material-icons-sharp {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    padding: 60px 40px;
+    gap: 30px;
+    padding: 20px 40px;
     max-width: 1200px;
     margin: 0 auto;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
+    margin: bottom 0;
   }
   .intro h1 {
     font-size: 32px;
@@ -140,20 +141,20 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
-    
     justify-content: center;
     align-items: center;
     min-height: 100vh;
   }
   
   .catalogo {
-    width: 90%;
     max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
     text-align: center;
   }
   
   .catalogo h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 40px;
     color: #00e0ff;
     text-shadow: 0 0 10px #00e0ff88;
@@ -161,221 +162,56 @@ body {
   
   .servicos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
+    justify-items: center;
   }
   
   .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 250px;
+    padding: 25px;
+    border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 25px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-  }
-  
   .card h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #00ffff;
-    text-shadow: 0 0 5px #00ffff88;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #00e0ff;
+    text-align: center;
   }
   
   .card p {
-    color: #ccc;
-    font-size: 1em;
-  }
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- /* Grade de serviços - organiza os cards lado a lado */
- .servicos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-    gap: 20px; /* Espaço entre os cards */
-    max-width: 1200px; /* Largura máxima do grid */
-    margin: 30px auto; /* Centraliza horizontalmente */
-    padding: 0 20px;
-    font-family: sans-serif;
-    justify-items: center; /* Centraliza os itens dentro do grid */
-    
-  }
-  
-  /* Cada card individual de serviço */
-  .service {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-  
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-  
-    width: 100%;
-    height: 440px;         /* ALTURA FIXA PADRONIZADA */
-    max-width: 360px;      /* LARGURA PADRÃO DOS CARDS */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-      
-  
-  
-  /* Efeito ao passar o mouse */
-  .service:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  }
-  
-  /* Imagem do serviço */
-  .service img {
-    width: 130px;
-    height: 130px; /* Altura fixa para manter a proporção */
-    border-radius: 12px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  
-  /* Título do serviço */
-  .service h3 {
-    font-size: 20px;
-    color: #00a651;
-    margin-bottom: 10px;
-  }
-
-  .descricao {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    padding: 5px 0;
-    max-height: 130px;
-    overflow: hidden; /* evita que quebre o layout */
-  }
-  
-  /* Descrição do serviço */
-  .descricao p {
-    font-size: 14px;
-    color: #050505;
-    margin: 0;
-    line-height: 1.4;
-  }
-  
-  .consultoria_mei {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: sans-serif;
-    color: #4a8b04;
-}
-
-  /* Título do serviço */
-  .consultoria_mei h1 {
-    
-    color: #00a651;
-    margin-bottom: 10px;
-    margin-top: 40px;
-  }
-  
-  /* Descrição do serviço */
-  .consultoria_mei p {
-    font-size: 16px;
-    color: #0a0a0a;
-  }
-
-.controle_financeiro_familiar {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: sans-serif;
-    color: #4a8b04;
-}
-
-  /* Título do serviço */
-.controle_financeiro_familiar h1 {
-    
-    color: #00a651;
-    margin-bottom: 10px;
-    margin-top: 40px;
-  }
-  
-  /* Descrição do serviço */
-.controle_financeiro_familiar p {
-    font-size: 16px;
-    color: #0a0a0a;
-  }
-
-.content11 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: sans-serif;
-    color: #4a8b04;
-}
-
-  /* Título do serviço */
-.content11 h1 {
-    
-    color: #00a651;
-    margin-bottom: 10px;
-    margin-top: 40px;
-}
-
-.content11 p {
-    font-size: 16px;
-    color: #0a0a0a;
+    color: white;
     margin-bottom: 20px;
-}
-
-.container-contato {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    padding: 30px;
-    max-width: 400px;
-    width: 100%;
-  }
-
-  .container-contato h2 {
     text-align: center;
-    color: #4a8b04;
-    margin-bottom: 20px;
+    min-height: 40px;       /* Força altura mínima */
+    display: flex;
+    align-items: center;    /* Centraliza verticalmente se quiser */
+    justify-content: center;
+    flex-grow: 1;           /* Ocupa espaço flexível */
+  }
+  
+  .card .btn {
+    background: #01c9ec;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .card .btn:hover {
+    background: #02a187;
   }
 
   form {
@@ -479,262 +315,32 @@ body {
     transform: scale(1.03); /* Leve aumento no hover */
   }
   
-  .mei {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+ 
+footer {
     text-align: center;
-  
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     padding: 20px;
-  
-    width: 100%;
-    height: 350px;         /* ALTURA FIXA PADRONIZADA */
-    max-width: 360px;      /* LARGURA PADRÃO DOS CARDS */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    }
-      
-  
-  
-  /* Efeito ao passar o mouse */
-  .mei:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  }
-  
-  /* Imagem do serviço */
-  .mei img {
-    width: 130px;
-    height: 130px; /* Altura fixa para manter a proporção */
-    border-radius: 12px;
-    margin-bottom: 5px;
-    margin-top: 20px;
-  }
-  
-  /* Título do serviço */
-  .mei h3 {
-    font-size: 20px;
-    color: #00a651;
-    
-  }
-  
-  /* Classe para bloquear a rolagem */
-.no-scroll {
-  overflow: hidden;
-}
-
-  /* Descrição do serviço */
-  .mei p {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #444;
-  }
-  .consultoria {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-    gap: 20px; /* Espaço entre os cards */
-    max-width: 1200px; /* Largura máxima do grid */
-    margin: 30px auto; /* Centraliza horizontalmente */
-    padding: 0 20px;
-    font-family: sans-serif;
-    justify-items: center; /* Centraliza os itens dentro do grid */
-  }
-
-  /* Responsividade para .consultoria */
-
-/* 3 colunas em telas grandes */
-@media (min-width: 992px) {
-  .consultoria {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* 2 colunas em telas médias */
-@media (min-width: 600px) and (max-width: 991px) {
-  .consultoria {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* 1 coluna em telas pequenas */
-@media (max-width: 599px) {
-  .consultoria {
-    grid-template-columns: 1fr;
-  }
-}
-/* Telas até 768px (tablets e celulares em modo paisagem) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    display: block;
-    background-color: transparent;
-    border: none;
-    font-size: 28px;
-    color: white;
-    margin-left: 15px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    left: 10px; /* alinhado com o botão */
-    background-color: #2f6b0a;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    
-  }
-
-  .body-no-scroll {
-    overflow: hidden;
-  }
-  
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .content img {
-    max-width: 90%;
-  }
-
-  header h1 {
-    font-size: 24px;
-  }
-
-  header h3 {
-    font-size: 18px;
-  }
-
-  .btn-link {
+    background-color: #203349;
+    color: #f5f2f2;
     font-size: 14px;
-    padding: 8px 16px;
-  }
-}
-
-/* Telas até 480px (celulares) */
-@media (max-width: 480px) {
-
-  header h3 {
-    font-size: 12px;
-  }
-
-  .content {
-    padding: 10px;
-  
-  }
-
-  .content h3 {
-    font-size: 18px;
-
-  }
-
-  .content p {
-    font-size: 10px;
-  }
-
-  footer {
-    font-size: 14px;
-  }
-
-  .btn-link {
-    font-size: 13px;
-  }
-
-  .service p {
-    font-size: 10px;
-  }
-  .consultoria_mei p {
-    font-size: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .consultoria_mei h1 {
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .consultoria p {
-    font-size: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .consultoria h3 {
-    font-size: 18px;
-  }
-
-  .controle_financeiro_familiar p {
-    font-size: 10px;
-  }
-
-  
-  .controle_financeiro_familiar h1 {
-    font-size: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .content11 h1 {
-    font-size: 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu-toggle {
-    display: block;
-    background-color: transparent;
-    border: none;
-    font-size: 28px;
-    color: white;
-    margin-left: 15px;
-    cursor: pointer;
-    z-index: 1001;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    left: 10px; /* alinhado com o botão */
-    background-color: #2f6b0a;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    
-  }
-
-  .body-no-scroll {
-    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 0;
   }
   
-
-  .nav-links.show {
-    display: flex;
+  footer.show {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-}
+  
+  footer a {
+    color: #06c5b5;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
