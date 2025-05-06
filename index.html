@@ -3,77 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fluxxo Desenvolvimento </title>
+  <title>Fluxxo Desenvolvimento</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
+
 <body>
 
-<!-- Seção Header-->
-
-<header> 
-
-  <nav>
-
-  <button class="menu-toggle" id="btn-menu">
-    ☰
-  </button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="precos.html">Catálogo</a></li>
-            <li class="contato"><a href="contato.html">
-              <span class="material-icons-sharp">forum</span>Contato</a></li>
-        </ul>
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <button class="menu-toggle" id="btn-menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="precos.html">Catálogo</a></li>
+        <li class="contato">
+          <a href="contato.html">
+            <span class="material-icons-sharp">forum</span>Contato
+          </a>
+        </li>
+      </ul>
     </nav>
-</header>
-<!-- Seção Header Fim-->
-<section class="intro" id="intro">
-
-  <div class="img">
-    <img src="./img/img.png" alt="Imagem de introdução">
+  </header>
+<main class="logo" id="logo">
+  <!-- Logo -->
+  <div>
+    <img src="./img/logo.png" alt="Logo da Fluxxo" />
   </div>
+  
+</main>
+  <!-- Seção de Introdução -->
+  <section class="intro" id="intro">
+    <div class="img" >
+      <img src="./img/img.png" alt="Imagem de introdução">
+    </div>
 
-  <div class="intro-content">
-    <h1>Transformamos Ideias em Soluções Digitais</h1>
-    <p>Seja bem-vindo ao nosso estúdio de desenvolvimento! Aqui, criamos <strong>planilhas inteligentes</strong> e <strong>sites sob medida</strong> que otimizam seus processos e fortalecem sua presença digital.</p>
-    <p>Combinamos automação, design moderno e foco no resultado para entregar ferramentas que realmente funcionam para você, sua equipe ou seu negócio.</p>
-    <p><em>Vamos tirar sua ideia do papel?</em> 🚀</p>
-  </div>
+    <div class="intro-content">
+      <h1>Transformamos Ideias em Soluções Digitais</h1>
+      <p>Seja bem-vindo ao nosso estúdio de desenvolvimento! Aqui, criamos <strong>planilhas inteligentes</strong> e <strong>sites sob medida</strong> que otimizam seus processos e fortalecem sua presença digital.</p>
+      <p>Combinamos automação, design moderno e foco no resultado para entregar ferramentas que realmente funcionam para você, sua equipe ou seu negócio.</p>
+      <p><em>Vamos tirar sua ideia do papel?</em> 🚀</p>
+    </div>
 
-<div class="circle">
-  <img src="./img/efeito.png">
-</div>  
+    <div class="next" id="next-btn" >
+      <a href="servicos.html" class="btn-link">E muito mais!</a>
+    </div>
+  </section>
 
-</section>
+  <!-- Rodapé -->
+  <footer id="footer">
+    <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
+    <p>Desenvolvido por 
+      <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">
+        MRS Desenvolvimento
+      </a>
+    </p>
+  </footer>
 
-<div class="next" id="next-btn">  
-  <a href="servicos.html" class="btn-link">E muito mais!</a>
-
-</div>
-
-<footer id="footer">
-
-  <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
-  <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
-</footer>
-
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const intro = document.getElementById('intro');
-    const nextBtn = document.getElementById('next-btn');
-    const footer = document.querySelector('footer'); // pega o elemento footer
-
-    setTimeout(() => {
-      intro.classList.add('show');
-      nextBtn.classList.add('show');
-      footer.classList.add('show'); // ativa o efeito no footer também
-    }, 300);
-  });
-</script>
-
-
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elementsToReveal = document.querySelectorAll(".logo, main, .intro, footer");
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+  
+      elementsToReveal.forEach(el => observer.observe(el));
+    });
+  </script>
+  
 
 </body>
 </html>

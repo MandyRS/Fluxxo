@@ -4,29 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Serviços</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="servicos.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
+ 
+<header> 
+
   <nav>
 
-    <button class="menu-toggle" id="btn-menu">
-      ☰
-    </button>
-          <ul class="nav-links" id="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="servicos.html">Serviços</a></li>
-              <li><a href="precos.html">Catálogo</a></li>
-              <li><a href="contato.html">Contato</a></li>
-          </ul>
-      </nav>
-      <header>
+  <button class="menu-toggle" id="btn-menu">
+    ☰
+  </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="precos.html">Catálogo</a></li>
+            <li class="contato"><a href="contato.html">
+              <span class="material-icons-sharp">forum</span>Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <h1>Serviços </h1> <br>
-        <h3>Qual serviço mais se encaixa para sua empresa?</h3>
-    </header>
+<div class="intro" id="intro">
+  <h1>Qual serviço mais se encaixa para sua empresa?</h1>
+</div>
 
+<div class="catalogo">
+  <h1>Catálogo de Serviços</h1>
+  <div class="servicos">
+    <div class="card">
+      <h2>Desenvolvimento Web</h2>
+      <p>Criação de sites modernos e responsivos com Django, HTML5, CSS3 e JavaScript.</p>
+    </div>
+    <div class="card">
+      <h2>Contabilidade Digital</h2>
+      <p>Automação de relatórios financeiros e integração com sistemas contábeis.</p>
+    </div>
+    <div class="card">
+      <h2>Integrações com API</h2>
+      <p>Conecte seu sistema ao WhatsApp, Mercado Pago e mais.</p>
+    
+    
+  <button class="open-modal" data-modal="modal-estoque">Ver Exemplo</button>
+</div>
+
+<div class="modal" id="modal-estoque">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Exemplo de Planilha de Estoque</h3>
+    <img src="./img/estoque.png" alt="Planilha de Estoque" style="width: 100%; border-radius: 5px;">
+  </div>
+</div>
+</div>
+
+  </div>
+</div>
+<!--
     <div class="servicos">
         
       <div class="service">
@@ -44,7 +80,7 @@
         <button class="open-modal" data-modal="modal-estoque">Ver Exemplo</button>
       </div>
       
-      <!-- Modal (fora do card) -->
+     
       <div class="modal" id="modal-estoque">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -65,8 +101,7 @@
                 <button class="open-modal" data-modal="modal-saidas">Ver Exemplo</button>
           </div>
         
-        <!-- Modal (fora do card) -->
-      <div class="modal" id="modal-saidas">
+             <div class="modal" id="modal-saidas">
         <div class="modal-content">
           <span class="close">&times;</span>
           <h3>Exemplo de Controle de Vendas</h3>
@@ -85,7 +120,7 @@
     
           </div>
 
-          <!-- Modal (fora do card) -->
+          
       <div class="modal" id="modal-financeiro">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -101,7 +136,7 @@
             <button class="open-modal" data-modal="modal-informativos">Ver Exemplo</button>
           </div>
 
-        <!-- Modal (fora do card) -->
+  
       <div class="modal" id="modal-informativos">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -120,7 +155,7 @@
                 <button class="open-modal" data-modal="modal-fornecedores">Ver Exemplo</button>
           </div>
 
-      <!-- Modal (fora do card) -->
+      
       <div class="modal" id="modal-fornecedores">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -139,7 +174,7 @@
                 <button class="open-modal" data-modal="modal-serviços">Ver Exemplo</button>
         </div>
 
-        <!-- Modal (fora do card) -->
+        <!-- Modal (fora do card) 
       <div class="modal" id="modal-serviços">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -158,7 +193,7 @@
                 <button class="open-modal" data-modal="modal-precificacao">Ver Exemplo</button>
              </div>
 
-        <!-- Modal (fora do card) -->
+        
       <div class="modal" id="modal-precificacao">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -177,7 +212,7 @@
                 <button class="open-modal" data-modal="modal-comissao">Ver Exemplo</button>
         </div>
 
-        <!-- Modal (fora do card) -->
+        <!-- Modal (fora do car
       <div class="modal" id="modal-comissao">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -197,7 +232,7 @@
         </div>
     </div>
 
-    <!-- Modal (fora do card) -->
+    <!-- Modal (fora do 
     <div class="modal" id="modal-funcionarios">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -248,12 +283,13 @@
         <a href="contato.html" class="btn-link">Fale Conosco</a>
     
       </div>
+    -->
+<footer id="footer">
 
-
-    <footer>
-        <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
-        <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
-      </footer>
+  <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
+  <p>Desenvolvido por <a href="https://www.linkedin.com/in/amanda-regina-7a8a8b222" target="_blank">MRS Desenvolvimento</a></p>
+</footer>
+      
 
       <script>
   // Abrir e fechar menu
@@ -339,6 +375,18 @@ modals.forEach(modal => {
 
 // Fecha o modal se clicar fora dele
 window.addEventListener('click', fecharModalFora);
+
+window.addEventListener('DOMContentLoaded', () => {
+    const intro = document.getElementById('intro');
+    const nextBtn = document.getElementById('next-btn');
+    const footer = document.querySelector('footer'); // pega o elemento footer
+
+    setTimeout(() => {
+      intro.classList.add('show');
+      nextBtn.classList.add('show');
+      footer.classList.add('show'); // ativa o efeito no footer também
+    }, 300);
+  });
 
       </script>
            
