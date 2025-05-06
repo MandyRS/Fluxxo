@@ -172,7 +172,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 250px;
+    min-height: 300px;
     padding: 25px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -210,9 +210,13 @@ body {
     transition: background 0.3s ease;
   }
   
-  .card .btn:hover {
-    background: #02a187;
+  .card:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4); /* Brilho mais forte */
+    background: rgba(255, 255, 255, 0.08); /* Suave clareada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   }
+  
 
   form {
     display: flex;
