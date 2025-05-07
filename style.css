@@ -28,6 +28,15 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+header.show {
+  opacity:1;
+  transform: translateY(0);
+
 }
 
 nav {

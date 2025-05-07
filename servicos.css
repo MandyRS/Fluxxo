@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
 /*Início do CSS do Header*/
-
+* {
+  padding: 0;
+  margin: 0
+}
 header {
-  position: fixad;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,13 +17,19 @@ header {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 
 nav {
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
   
 }
 
@@ -63,6 +72,12 @@ nav .contato{
   background-color: #07e0ce;
 }
 
+header.show {
+  opacity:1;
+  transform: translateY(0);
+
+}
+
 header nav .material-icons-sharp {
   gap: 0.5rem;
   font-size: 1.5rem;
@@ -72,13 +87,7 @@ header nav .material-icons-sharp {
 
     margin-left: 80px;
 }
-  /* Body base */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff;
-    color: #222;
-    
-  }
+  
 
   .intro {
     display: flex;
@@ -107,17 +116,6 @@ header nav .material-icons-sharp {
 
   
 /* Rodapé */
-footer {
-    text-align: center;
-    margin-bottom:0; 
-    padding: 20px;
-    background-color: #dfe4ea;
-    color: #000000;
-    font-size: 14px;
-    opacity: 0;
-    transform:translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
   
   footer a {
     color: #06c5b5;
@@ -135,6 +133,23 @@ footer {
   footer a:hover {
     text-decoration: underline;
   }
+
+  
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #203349;
+    color: #f5f2f2;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 0;
+  }
+  
+
+  
 /* estilo.css */
 body {
     margin: 0;
@@ -148,9 +163,18 @@ body {
   
   .catalogo {
     max-width: 1200px;
-    margin: 60px auto;
+    margin: 120px auto;
     padding: 0 20px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .catalogo.show {
+    opacity:1;
+    transform: translateY(0);
+  
   }
   
   .catalogo h1 {
@@ -165,6 +189,14 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     justify-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .servicos.show {
+    opacity:1;
+    transform: translateY(0);
+  
   }
   
   .card {
@@ -259,40 +291,48 @@ body {
   }
 /* Modal base */
 .modal {
-    display: none; /* Oculto por padrão */
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  border-radius:10px;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
   
-  /* Conteúdo do modal */
-  .modal-content {
-    position: relative;
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 88%;
-    max-width: 1400px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
 
-  .body-no-scroll {
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+  /* Imagem dentro do modal */
+.modal-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  
+}
+  .modal.no-scroll {
     overflow: hidden;
   }
   
+  /* Quando ativo */
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
   
   /* Botão de fechar */
   .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    align-self: flex-end;
+    font-size: 24px;
     cursor: pointer;
   }
   .close:hover {
@@ -300,7 +340,7 @@ body {
   }
   
   .open-modal {
-    background-color: #00a651;
+    background-color: #00c0c7;
     color: white;
     padding: 10px 18px;
     border: none;
@@ -315,36 +355,33 @@ body {
   }
   
   .open-modal:hover {
-    background-color: #008f46; /* Tom mais escuro no hover */
+    background-color: #129186; /* Tom mais escuro no hover */
     transform: scale(1.03); /* Leve aumento no hover */
   }
+
+  .modal h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    
+  }
+
+  
+  .close {
+    color: #ffffff;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size:50px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #e62d2d;
+  }
+  
+  
   
  
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #203349;
-    color: #f5f2f2;
-    font-size: 14px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-    margin-bottom: 0;
-  }
-  
-  footer.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  footer a {
-    color: #06c5b5;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
