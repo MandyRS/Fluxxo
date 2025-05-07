@@ -1,0 +1,127 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(7.5rem - 2rem);
+    background-color: #00b3b3;
+    box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  header.show {
+    opacity:1;
+    transform: translateY(0);
+  
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  nav ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav a {
+    color: white;
+    padding: 1.25rem 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+  }
+  
+  nav .contato {
+    background-color: #07e0ce;
+    border-radius: 8px;
+  }
+  
+  nav .material-icons-sharp {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #203349;
+    color: #f5f2f2;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    margin-bottom: 0;
+  }
+  
+  footer.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  footer a {
+    color: #08e0ce;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animações */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
