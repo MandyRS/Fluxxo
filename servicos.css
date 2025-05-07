@@ -294,94 +294,91 @@ body {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0.5);  /* fundo escurecido */
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
   opacity: 0;
-  border-radius:10px;
+  visibility: hidden;
   transition: opacity 0.3s ease;
   z-index: 1000;
 }
-  
 
 .modal.show {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
 }
 
-  /* Imagem dentro do modal */
-.modal-content img {
-  max-width: 100%;
-  max-height: 70vh;
-  object-fit: contain;
+/* Conteúdo do modal */
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1200px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho com abas */
+.modal-header {
+  background: #4d88c6;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-right: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.modal-header button:hover {
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+/* Botão de fechar */
+.close {
+  position: absolute;
+  padding-bottom: 200px;
+  right: 15px;
+  font-size: 50px;
+  color: rgb(8, 224, 224);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: #ff4d4d;
+}
+
+
+/* Botão de abrir modal */
+.open-modal {
+  background-color: #00c0c7;
+  color: white;
+  padding: 10px 18px;
+  border: none;
   border-radius: 8px;
-  
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 20px auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
 }
-  .modal.no-scroll {
-    overflow: hidden;
-  }
-  
-  /* Quando ativo */
-.modal.show {
-  visibility: visible;
-  opacity: 1;
+
+.open-modal:hover {
+  background-color: #129186;
+  transform: scale(1.03);
 }
-  
-  /* Botão de fechar */
-  .close {
-    align-self: flex-end;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  .close:hover {
-    color: #333;
-  }
-  
-  .open-modal {
-    background-color: #00c0c7;
-    color: white;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    margin: 20px auto;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    align-self: center; /* Garante centralização */
-  }
-  
-  .open-modal:hover {
-    background-color: #129186; /* Tom mais escuro no hover */
-    transform: scale(1.03); /* Leve aumento no hover */
-  }
-
-  .modal h3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    
-  }
-
-  
-  .close {
-    color: #ffffff;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size:50px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #e62d2d;
-  }
-  
-  
-  
- 
