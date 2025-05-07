@@ -5,14 +5,13 @@
     box-sizing: border-box;
   }
   
-  /* Base */
   body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
   }
   
@@ -125,3 +124,95 @@ footer {
       transform: scale(1.05);
     }
   }
+
+  /* ===== SOBRE NÓS CARD ===== */
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 92vh;
+     
+      
+}
+.sobre-nos {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    animation: fadeIn 1s ease;
+    
+    
+  }
+  
+  .sobre-nos h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00fff7;
+    letter-spacing: 1px;
+  }
+  
+  .sobre-nos p {
+    text-align: justify;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+/* ===== CARDS DOS SÓCIOS ===== */
+.socios {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .socio {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease;
+  }
+  
+  .socio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.4);
+  }
+  
+  .socio img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #00fff7;
+    margin-bottom: 15px;
+  }
+  
+  .socio h3 {
+    color: #00fff7;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .socio p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px);}
+    to { opacity: 1;}
+    }
