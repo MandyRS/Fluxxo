@@ -154,7 +154,7 @@ header nav .material-icons-sharp {
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #0a0f10, #1f2b2f, #2c5364);
     color: #fff;
     justify-content: center;
     align-items: center;
@@ -163,7 +163,7 @@ body {
   
   .catalogo {
     max-width: 1200px;
-    margin: 120px auto;
+    margin: 80px auto;
     padding: 0 20px;
     text-align: center;
     opacity: 0;
@@ -180,7 +180,8 @@ body {
   .catalogo h1 {
     font-size: 2em;
     margin-bottom: 40px;
-    color: #00e0ff;
+    margin-top: 120px;
+    color: #ffffff;
     text-shadow: 0 0 10px #00e0ff88;
   }
   
@@ -216,9 +217,16 @@ body {
   
   .card h2 {
     font-size: 1.3em;
-    margin-bottom: 10px;
+    margin-top: 20px;
     color: #00e0ff;
     text-align: center;
+  }
+
+  #titulo h1{
+    font-size: 2em;
+    margin-top: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00e0ff88;
   }
   
   .card p {
@@ -289,6 +297,7 @@ body {
       padding: 20px;
     }
   }
+
 /* Modal base */
 .modal {
   position: fixed;
