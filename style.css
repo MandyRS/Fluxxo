@@ -128,103 +128,79 @@ main .fundo{
 }
 
 /* Intro Section */
+/* ===== Seção Intro Consultoria Contábil ===== */
 .intro {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh; /* ocupa 100% da tela */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  min-height: 91vh;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center; /* centraliza horizontalmente */
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(254, 255, 255, 0.95), rgba(179, 198, 255, 0.9)),
+              url("https://img.freepik.com/fotos-gratis/fundo-de-tecnologia-digital-futurista-com-particulas-de-pontos-brilhantes_53876-129770.jpg") no-repeat center center/cover;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  
 }
 
-.intro.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.intro .img img {
-  max-width: 1300px;
+/* Fundo com imagem clara de tecnologia */
+.intro::before {
+  content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://img.freepik.com/fotos-gratis/fundo-de-tecnologia-de-poli-baixo_23-2149103570.jpg') 
+              no-repeat center center/cover;
+  opacity: 0.08; /* Deixa a imagem bem clarinha */
   z-index: 1;
 }
 
-/* Intro Content */
 .intro-content {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-  margin: 20px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
-  max-width: 600px;
-  color: #ccc;
-  text-align: left;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.intro-content h1 {
-  color: #00e0ff;
-  text-shadow: 0 0 10px #00e0ff88;
+.intro h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
   margin-bottom: 20px;
+  color: #003366; /* Azul corporativo */
 }
 
-.intro-content p strong {
-  color: #00ffff;
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #333;
 }
 
-.intro-content p em {
+.intro p strong {
+  color: #0055aa;
+}
+
+.intro p em {
   font-style: italic;
-  color: #80e0ff;
+  color: #008060;
+  font-weight: 600;
 }
 
-main.show,
-.logo.show,
-.intro.show,
-footer.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* Call to Action */
-.next {
-  background: rgba(4, 240, 240, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 25px;
-  margin: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.next:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-}
-
-.next a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1em;
-}
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #203349;
+  background-color: #46abae;
   color: #f5f2f2;
   font-size: 14px;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1s ease, transform 0s ease;
   margin-bottom: 0;
 }
 
@@ -234,7 +210,7 @@ footer.show {
 }
 
 footer a {
-  color: #08e0ce;
+  color: #05534c;
   font-weight: bold;
   text-decoration: none;
   transition: background 0.3s ease;
@@ -252,4 +228,120 @@ footer a:hover {
   50% {
     transform: scale(1.05);
   }
+}
+
+
+
+
+
+#como-funciona {
+  height: 100vh; /* ocupa 100% da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center; /* centraliza horizontalmente */
+  text-align: center;
+  padding:  20px;
+  background: linear-gradient(rgba(201, 241, 255, 0.9), rgba(255,255,255,0.9)), 
+              url("https://img.freepik.com/free-vector/abstract-technological-background_23-2148897676.jpg");
+  background-size: cover;
+  
+}
+
+
+#como-funciona .container {
+  max-width: 1100px;
+  margin: 100px auto;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#como-funciona h2 {
+  font-size: 2.2rem;
+  margin-top: 100px;
+  color: #222;
+}
+
+#como-funciona .intro_two {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  color: #444;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.step {
+  color: #333;
+  background: #fffefe;
+  padding: 30px 20px;
+  margin: 100px 10px;
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.step .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #4b9da8;
+}
+
+.step .material-icons {
+  font-size: 48px;
+}
+
+/* GARANTE QUE O FUNDO NÃO INTERCEPTE CLIQUES */
+.intro { position: relative; }
+.intro::before {
+  z-index: 0;              /* fica atrás de tudo */
+  pointer-events: none;    /* não bloqueia o mouse */
+}
+
+/* CONTEÚDO ACIMA DO FUNDO */
+.intro-content,
+.next {
+  position: relative;
+  z-index: 1;
+}
+
+/* SE TIVER IMAGEM DECORATIVA NA INTRO, NÃO DEIXE CLICÁVEL */
+.intro-image,
+.intro-image * {
+  pointer-events: none;
+}
+
+/* ESTILO DO BOTÃO (e garante que ele esteja no topo) */
+.btn-link {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;         /* cursor de link */
+  pointer-events: auto;    /* assegura que receba o clique */
+}
+
+.btn-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,123,255,.35);
 }
