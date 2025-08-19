@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
-/*Início do CSS do Header*/
+/* ----------------- Início do CSS do Header -----------------------*/
 * {
   padding: 0;
   margin: 0
@@ -83,222 +83,174 @@ header nav .material-icons-sharp {
   font-size: 1.5rem;
 }
 
-.banner {
-
-    margin-left: 80px;
-}
+/*---------------------  Fim do Header --------------------------------*/
+  
   
 
-  .intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    padding: 20px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-    margin: bottom 0;
-  }
-  .intro h1 {
-    font-size: 32px;
-    color: #02af98;
-    margin-bottom: 20px;
-    justify-content:center;
-  }
 
-  .intro.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
-  
-/* Rodapé */
-  
-  footer a {
-    color: #06c5b5;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
 
-  footer.show {
-    opacity:1;
-    transform: translateY(0);
-
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #203349;
-    color: #f5f2f2;
-    font-size: 14px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-    margin-bottom: 0;
-  }
-  
-
-  
-/* estilo.css */
+/*------------------ Estilo do container principal -----------------------*/
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0a0f10, #1f2b2f, #2c5364);
+    background: linear-gradient(rgba(227, 230, 230, 0.9), rgba(242, 239, 239, 0.9));
+    background-size: cover;
+  
     color: #fff;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
   }
   
-  .catalogo {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-
-  .catalogo.show {
-    opacity:1;
-    transform: translateY(0);
-  
-  }
-  
-  .catalogo h1 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    margin-top: 120px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #00e0ff88;
-  }
-  
-  .servicos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    justify-items: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  .servicos.show {
-    opacity:1;
-    transform: translateY(0);
-  
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 250px;
-    padding: 25px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card h2 {
-    font-size: 1.3em;
-    margin-top: 20px;
-    color: #00e0ff;
-    text-align: center;
-  }
-
-  #titulo h1{
-    font-size: 2em;
-    margin-top: 40px;
-    color: #ffffff;
-    text-shadow: 0 0 10px #00e0ff88;
-  }
-  
-  .card p {
-    color: white;
-    margin-bottom: 20px;
-    text-align: center;
-    min-height: 40px;       /* Força altura mínima */
-    display: flex;
-    align-items: center;    /* Centraliza verticalmente se quiser */
-    justify-content: center;
-    flex-grow: 1;           /* Ocupa espaço flexível */
-  }
-  
-  .card .btn {
-    background: #01c9ec;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.05); /* Aumenta levemente o tamanho */
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4); /* Brilho mais forte */
-    background: rgba(255, 255, 255, 0.08); /* Suave clareada */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  }
   
 
-  form {
-    display: flex;
-    flex-direction: column;
-  }
+/* ====== CARROSSEL ====== */
+.catalogo {
+  padding: 50px 20px;
+  background: #f0f2f8;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
 
-  label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
+.catalogo h1 {
+  font-size: 2rem;
+  margin-bottom: 100px;
+  color: #3f4042;
+  letter-spacing: 1px;
+}
 
-  input, textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-  }
+/* ===== CARROSSEL ===== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
 
-  button {
-    padding: 12px;
-    background-color: #00a651;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
+.carousel-track {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.5s ease;
+  align-items: stretch; /* faz todos os cards terem a mesma altura */
+}
 
-  button:hover {
-    background-color: #008f46;
-  }
+.card {
+  display: flex;
+  flex-direction: column; /* deixa o conteúdo vertical */
+  justify-content: space-between; /* distribui título, texto e botão */
+  min-width: 250px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  flex-shrink: 0;
+  height: 300px; /* garante que todos os cards tenham a mesma altura */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
 
-  @media (max-width: 480px) {
-    .container-contato {
-      padding: 20px;
-    }
-  }
 
-/* Modal base */
+.card h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  width: 350px;
+  height: 60px;           /* altura mínima para uniformizar */
+  word-wrap: break-word;       /* permite quebrar palavras longas */
+  overflow-wrap: break-word;   /* compatibilidade com navegadores */
+  white-space: normal;         /* garante quebra de linha automática */
+  text-align: center;          /* opcional, se quiser centralizar */
+}
+
+.card p {
+  color: #555;
+  font-size: 1rem;
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+  height: 60px;           /* altura mínima para uniformizar */
+  word-wrap: break-word;       /* permite quebrar palavras longas */
+  overflow-wrap: break-word;   /* compatibilidade com navegadores */
+  white-space: normal;         /* garante quebra de linha automática */
+  text-align: center;   
+  width:350px;       /* opcional, se quiser centralizar */
+}
+
+/* Efeito hover nos cards */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 123, 255, 0.25);
+}
+
+/* BOTÕES MODAIS */
+.open-modal {
+  padding: 10px 25px;
+  border: none;
+  background: linear-gradient(135deg, #00d4ff, #007bff);
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 300;
+  transition: all 0.3s ease;
+}
+
+.open-modal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* SETAS DO CARROSSEL */
+.carousel button.prev,
+.carousel button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  color: #2a2a2a;
+  font-size: 2.2rem;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.carousel button.prev:hover,
+.carousel button.next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel button.prev { left: 15px; }
+.carousel button.next { right: 15px; }
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .card { min-width: 300px; padding: 20px; }
+  .catalogo h1 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+  .card { min-width: 260px; padding: 18px; }
+}
+
+@media (max-width: 480px) {
+  .card { min-width: 200px; padding: 15px; }
+  .carousel button.prev, .carousel button.next { font-size: 1.5rem; padding: 8px 12px; }
+}
+
+  /*-------------------------- Fim do conteúdo principal ---------------------------*/
+  
+
+
+
+
+
+/*---------------------------------- Modal base ------------------------------- */
 .modal {
   position: fixed;
   top: 0; left: 0;
@@ -372,3 +324,46 @@ body {
   background-color: #129186;
   transform: scale(1.03);
 }
+
+
+/*-------------------------- Fim do Modal base --------------------------- */
+
+
+
+
+
+  
+/* ------------------------------ Rodapé ---------------------------------*/
+  
+  footer a {
+  color: #05534c;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+  footer.show {
+    opacity:1;
+    transform: translateY(0);
+
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  
+
+  footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #46abae;
+  color: #f5f2f2;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 0s ease;
+  margin-bottom: 0;
+}
+  
+/*-------------------------- Fim do Rodapé -------------------------------*/
