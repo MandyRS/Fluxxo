@@ -15,14 +15,14 @@ body {
   margin: 0;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: calc(7.5rem - 2rem);
-  background-color: #00b3b3;
+  background-color: #fafaff;
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   display: flex;
   justify-content: center;
@@ -34,9 +34,8 @@ header {
 }
 
 header.show {
-  opacity:1;
+  opacity: 1;
   transform: translateY(0);
-
 }
 
 nav {
@@ -58,30 +57,40 @@ nav ul li {
 }
 
 nav a {
-  color: white;
+  color: #0A3D62;
   padding: 1.25rem 1.5rem;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: #0077cc;
 }
 
 nav .contato {
-  background-color: #07e0ce;
+  background-color: #0A3D62;
   border-radius: 8px;
+  color: white;
+}
+
+nav .contato a {
+  color: white;
 }
 
 nav .material-icons-sharp {
   font-size: 1.5rem;
   margin-right: 0.5rem;
+  color: white;
 }
 
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: #0A3D62;
   font-size: 28px;
   cursor: pointer;
 }
@@ -127,6 +136,27 @@ main .fundo{
   transform: translateY(0);
 }
 
+.logo {
+  background: url("./img/logo.png") no-repeat center center/cover;
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+}
+
+#grafico-container {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 600px;
+    }
+    canvas {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    }
+
 /* Intro Section */
 /* ===== Seção Intro Consultoria Contábil ===== */
 .intro {
@@ -162,7 +192,7 @@ main .fundo{
 .intro-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -195,13 +225,13 @@ main .fundo{
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #46abae;
+  background-color: #0A3D62;
   color: #f5f2f2;
   font-size: 14px;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease, transform 0s ease;
-  margin-bottom: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  margin-top: auto;
 }
 
 footer.show {
@@ -210,11 +240,11 @@ footer.show {
 }
 
 footer a {
-  color: #05534c;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
+    color: #00acfc;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
 
 footer a:hover {
   text-decoration: underline;
@@ -242,7 +272,7 @@ footer a:hover {
   align-items: center; /* centraliza horizontalmente */
   text-align: center;
   padding:  20px;
-  background: linear-gradient(rgba(201, 241, 255, 0.9), rgba(255,255,255,0.9)), 
+  background: linear-gradient(rgba(193, 197, 255, 0.9), rgba(255,255,255,0.9)), 
               url("https://img.freepik.com/free-vector/abstract-technological-background_23-2148897676.jpg");
   background-size: cover;
   
@@ -298,7 +328,7 @@ footer a:hover {
 .step .icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
-  color: #4b9da8;
+  color: #3533cd;
 }
 
 .step .material-icons {
@@ -331,7 +361,7 @@ footer a:hover {
   z-index: 2;
   display: inline-block;
   padding: 12px 30px;
-  background: linear-gradient(135deg, #007bff, #00d4ff);
+  background: linear-gradient(135deg, #3533cd, #15151b);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -344,4 +374,155 @@ footer a:hover {
 .btn-link:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,123,255,.35);
+}
+
+/* RESPONSIVO */
+
+/* ================== RESPONSIVIDADE ================== */
+
+/* Telas grandes (até 1200px) */
+@media (max-width: 1200px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+
+  .steps {
+    gap: 20px;
+  }
+footer {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+  .sobre-nos {
+    padding: 40px 15px;
+  }
+footer {
+    margin-top: auto;
+  }
+}
+
+/* Tablets (até 992px) */
+@media (max-width: 992px) {
+  header {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+
+  #como-funciona h2 {
+    font-size: 1.8rem;
+  }
+
+  .step {
+    width: 250px;
+    margin: 40px 10px;
+    padding: 20px;
+  }
+  footer {
+    margin-top: auto;
+  }
+
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: #fafaff;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro p {
+    font-size: 0.95rem;
+  }
+
+  #como-funciona h2 {
+    font-size: 1.6rem;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .step {
+    width: 90%;
+    margin: 20px 0;
+  }
+  footer {
+    margin-top: auto;
+  }
+
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  nav a {
+    padding: 1rem;
+    font-size: 14px;
+  }
+
+  .intro h1 {
+    font-size: 1.6rem;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+  }
+
+  #como-funciona h2 {
+    font-size: 1.4rem;
+  }
+
+  .step {
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  .btn-link {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  footer {
+    margin-top: auto;
+  }
 }

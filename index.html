@@ -25,35 +25,32 @@
     <nav>
       <button class="menu-toggle" id="btn-menu">☰</button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li class="contato">
-          <a href="contato.html">
-            <span class="material-icons-sharp">forum</span>Contato
-          </a>
-        </li>
-      </ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="parcerias.html">Nossas parcerias</a></li>
+            <li class="contato"><a href="contato.html">
+              <span class="material-icons-sharp">forum</span>Contato</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 <main class="logo" id="logo">
   <!-- Logo -->
-  <div>
-    <img src="./img/logo.png" alt="Logo da Fluxxo" />
-  </div>
+  
   
 </main>
   <!-- Seção de Introdução -->
 <section class="intro" id="intro">
   <div class="intro-content">
-    <h1>Soluções Inteligentes para o Seu Negócio</h1>
-    <p>Seja bem-vindo à nossa empresa! Somos especialistas em <strong>consultoria contábil</strong>, <strong>planilhas personalizadas</strong> e <strong>sites sob medida</strong>, desenvolvidos para otimizar processos e fortalecer a gestão da sua empresa.</p>
+    <h1>Simplificando a Contabilidade da Sua Empresa</h1>
     
-    <p>Oferecemos suporte completo: desde a organização financeira com automação inteligente até estratégias digitais que destacam sua marca e ajudam no crescimento sustentável.</p>
+    <p>Bem-vindo à <strong>Fluxxo Contábil</strong>! Somos um escritório especializado em oferecer <strong>consultoria contábil completa</strong>, <strong>gestão tributária inteligente</strong> e <strong>planejamento financeiro estratégico</strong>, sempre alinhados às necessidades do seu negócio.</p>
     
-    <p>Nosso time combina <strong>conhecimento contábil</strong>, <strong>tecnologia</strong> e <strong>design moderno</strong> para criar soluções práticas e eficientes, que realmente fazem diferença no dia a dia do seu negócio.</p>
+    <p>Nossa missão é garantir que sua empresa esteja em dia com as obrigações fiscais, trabalhistas e societárias, oferecendo soluções práticas que reduzem riscos e aumentam a eficiência da sua gestão.</p>
     
-    <p><em>Conte conosco para simplificar sua gestão e impulsionar seus resultados!</em> ⚡</p>
+    <p>Com uma equipe dedicada e atualizada, cuidamos de <strong>escrituração contábil</strong>, <strong>apuração de impostos</strong>, <strong>folha de pagamento</strong> e <strong>relatórios gerenciais</strong>, para que você tenha total clareza sobre a saúde financeira do seu negócio.</p>
+    
+    <p><em>Na Fluxxo, você tem a tranquilidade de uma contabilidade confiável, que acompanha seu crescimento em cada etapa.</em> 📊</p>
   </div>
 
   <div class="next" id="next-btn">
@@ -62,28 +59,30 @@
 </section>
 
 
-  <div id="como-funciona">
+
+
+ <div id="como-funciona">
   <div class="container">
-    <h2>🚀 Como Funciona</h2>
-    <p class="intro_two">Nosso processo é simples e eficiente. Em poucos passos, você tem sua solução personalizada pronta para usar.</p>
+    <h2>Como Funciona</h2>
+    <p class="intro_two">Nosso atendimento é simples, transparente e pensado para facilitar sua rotina. Em poucos passos, você tem sua contabilidade organizada e sempre em dia.</p>
 
     <div class="steps">
       <div class="step">
-        <div class="icon"><span class="material-icons">description</span></div>
-        <h3>1. Conte sua necessidade</h3>
-        <p>Explique o que precisa em uma planilha ou site exclusivo para o seu negócio.</p>
+        <div class="icon"><span class="material-icons">assignment</span></div>
+        <h3>1. Entendemos sua empresa</h3>
+        <p>Coletamos as informações do seu negócio para identificar suas necessidades fiscais, tributárias e contábeis.</p>
       </div>
 
       <div class="step">
-        <div class="icon"><span class="material-icons">build</span></div>
-        <h3>2. Desenvolvemos a solução</h3>
-        <p>Criamos com foco em automação, organização e praticidade, sob medida para você.</p>
+        <div class="icon"><span class="material-icons">calculate</span></div>
+        <h3>2. Organizamos e cuidamos da contabilidade</h3>
+        <p>Fazemos a escrituração, apuração de impostos e relatórios gerenciais de forma clara e acessível.</p>
       </div>
 
       <div class="step">
-        <div class="icon"><span class="material-icons">check_circle</span></div>
-        <h3>3. Entrega e suporte</h3>
-        <p>Você recebe tudo pronto e ainda conta com nosso suporte para ajustes e dúvidas.</p>
+        <div class="icon"><span class="material-icons">support_agent</span></div>
+        <h3>3. Acompanhamento e suporte</h3>
+        <p>Você conta com suporte contínuo, relatórios estratégicos e orientação para a melhor tomada de decisão.</p>
       </div>
     </div>
   </div>
@@ -99,7 +98,29 @@
 
   <!-- Scripts -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    const btnMenu = document.getElementById('btn-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    btnMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      document.body.classList.toggle('body-no-scroll', navLinks.classList.contains('show'));
+    });
+
+    // Fechar menu ao clicar fora
+    window.addEventListener('click', function (event) {
+      if (
+        navLinks.classList.contains('show') &&
+        !navLinks.contains(event.target) &&
+        event.target !== btnMenu
+      ) {
+        navLinks.classList.remove('show');
+        document.body.classList.remove('body-no-scroll');
+      }
+    });
+
+    
+    
+document.addEventListener("DOMContentLoaded", () => {
       const elementsToReveal = document.querySelectorAll(".logo, main, .intro, footer, header");
   
       const observer = new IntersectionObserver((entries) => {
@@ -116,6 +137,10 @@
   
       elementsToReveal.forEach(el => observer.observe(el));
     });
+
+    // Inicializar AOS (animações)
+    AOS.init();
+    
   </script>
   
 

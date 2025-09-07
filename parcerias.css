@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+
+/* ----------------- Reset -----------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(7.5rem - 2rem);
+  background-color: #fafaff;
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+header.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: #0A3D62;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: #0077cc;
+}
+
+nav .contato {
+  background-color: #0A3D62;
+  border-radius: 8px;
+  color: white;
+}
+
+nav .contato a {
+  color: white;
+}
+
+nav .material-icons-sharp {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #0A3D62;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ----------------- Sessão Parcerias -----------------------*/
+.parcerias {
+  max-width: 1100px;
+  margin: clamp(100px, 12vh, 150px) auto 0 auto;
+  padding: clamp(20px, 5vw, 50px);
+  text-align: center;
+  min-height: 80vh;
+}
+
+.parcerias h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: #0A3D62;
+  margin-bottom: 20px;
+}
+
+.parcerias p.descricao {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  color: #555;
+}
+
+/* ----------------- Cards de Parceiros -----------------------*/
+.parceiro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(15px, 3vw, 30px);
+  background: #fff;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.parceiro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.parceiro img  {
+  width: clamp(120px, 20vw, 200px);
+  height: clamp(120px, 20vw, 200px);
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.parceiro-texto {
+  max-width: 600px;
+  flex: 1;
+  text-align: left;
+}
+
+.parceiro-texto h2 {
+  color: #0A3D62;
+  margin-bottom: 10px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.parceiro-texto p {
+  color: #444;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* Botão dentro do card */
+.btn-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.btn-whatsapp {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: linear-gradient(90deg, #00fff7, #00c9ff);
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: bold;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.parceiro button:hover {
+  background: #082a45;
+}
+
+/* ----------------- Responsividade -----------------------*/
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .parceiro {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .parceiro-texto {
+    text-align: center;
+    width: 100%;
+  }
+
+  .parceiro img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: #fafaff;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    padding: 1rem;
+    font-size: 14px;
+  }
+  .parceiro {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .btn-whatsapp {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: clamp(15px, 2vw, 30px);
+  background-color: #0A3D62;
+  color: #f5f2f2;
+  font-size: clamp(12px, 2vw, 14px);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  margin-top: auto;
+}
+
+footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer a {
+  color: #00acfc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #00fff7;
+}

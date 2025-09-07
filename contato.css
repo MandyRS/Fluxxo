@@ -5,15 +5,18 @@
   padding:0;
 }
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0a0f10, #1f2b2f, #2c5364);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(rgba(227, 230, 230, 0.9), rgba(242, 239, 239, 0.9));
+    background-size: cover;
+  
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
+/* ===== HEADER ===== */
 /* ===== HEADER ===== */
 header {
   position: fixed;
@@ -21,7 +24,7 @@ header {
   left: 0;
   width: 100%;
   height: calc(7.5rem - 2rem);
-  background-color: #00b3b3;
+  background-color: #fafaff;
   box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
   display: flex;
   justify-content: center;
@@ -33,9 +36,8 @@ header {
 }
 
 header.show {
-  opacity:1;
+  opacity: 1;
   transform: translateY(0);
-
 }
 
 nav {
@@ -57,30 +59,40 @@ nav ul li {
 }
 
 nav a {
-  color: white;
+  color: #0A3D62;
   padding: 1.25rem 1.5rem;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  color: #0077cc;
 }
 
 nav .contato {
-  background-color: #07e0ce;
+  background-color: #0A3D62;
   border-radius: 8px;
+  color: white;
+}
+
+nav .contato a {
+  color: white;
 }
 
 nav .material-icons-sharp {
   font-size: 1.5rem;
   margin-right: 0.5rem;
+  color: white;
 }
 
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: #0A3D62;
   font-size: 28px;
   cursor: pointer;
 }
@@ -90,7 +102,7 @@ nav .material-icons-sharp {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #203349;
+  background-color: #0A3D62;
   color: #f5f2f2;
   font-size: 14px;
   opacity: 0;
@@ -105,11 +117,11 @@ footer.show {
 }
 
 footer a {
-  color: #08e0ce;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s;
-}
+    color: #00acfc;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
 
 footer a:hover {
   text-decoration: underline;
@@ -122,12 +134,13 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   flex: 1;
+  height: 75.1vh; 
   padding: 120px 20px 40px; /* espaçamento pro header fixo */
 }
 
 /* ===== FORM CARD ===== */
 .container-contato {
-  background: rgba(255, 255, 255, 0.05);
+  background:#0A3D62;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -204,3 +217,135 @@ footer a:hover {
   from { opacity: 0; transform: translateY(-20px);}
   to { opacity: 1;}
   }
+
+/* ======= responiavo ======= */
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Telas grandes (até 1200px) */
+@media (max-width: 1200px) {
+  .container-contato {
+    max-width: 500px;
+    padding: 35px;
+  }
+  .container-contato h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+  .sobre-nos {
+    padding: 40px 15px;
+  }
+}
+
+/* Tablets (até 992px) */
+@media (max-width: 992px) {
+  .container {
+    padding: 100px 15px 30px;
+  }
+  .container-contato {
+    max-width: 450px;
+    padding: 30px;
+  }
+  .container-contato input,
+  .container-contato textarea {
+    width: 100%;
+  }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: #fafaff;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  .container {
+    padding: 100px 10px 30px;
+  }
+  .container-contato {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+  }
+  .container-contato h2 {
+    font-size: 1.4rem;
+  }
+  .container-contato p {
+    font-size: 13px;
+  }
+  .container-contato input,
+  .container-contato textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Celulares médios (até 576px) */
+@media (max-width: 576px) {
+  .container {
+    padding: 90px 10px 20px;
+  }
+  .container-contato {
+    max-width: 100%;
+    padding: 20px;
+  }
+  .container-contato h2 {
+    font-size: 1.2rem;
+  }
+  .container-contato p {
+    font-size: 12px;
+  }
+  .container-contato button {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Celulares pequenos (até 400px) */
+@media (max-width: 400px) {
+  nav a {
+    padding: 0.8rem;
+    font-size: 13px;
+  }
+  .container {
+    padding: 80px 8px 15px;
+  }
+  .container-contato {
+    border-radius: 12px;
+    padding: 15px;
+  }
+  .container-contato h2 {
+    font-size: 1rem;
+  }
+  .container-contato input,
+  .container-contato textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .container-contato button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

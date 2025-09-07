@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nossas Parcerias</title>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="parcerias.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <nav>
+      <button class="menu-toggle" id="btn-menu">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="parcerias.html">Nossas Parcerias</a></li>
+        <li class="contato"><a href="contato.html">
+          <span class="material-icons-sharp">forum</span>Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção de Parcerias -->
+  <section class="parcerias">
+    <h1>Nossas Parcerias</h1>
+    <p class="descricao">
+      Acreditamos que o sucesso é construído em conjunto. Por isso, buscamos sempre parceiros estratégicos
+      que agregam valor aos nossos serviços e potencializam os resultados dos nossos clientes.
+    </p>
+
+    <!-- Fluxxo Solutions -->
+    <div class="parceiro" data-aos="fade-up">
+      <img src="./img/logofluxxo.png" alt="Logo da Fluxxo Solutions" />
+      <div class="parceiro-texto">
+        <h2>Fluxxo Solutions</h2>
+        <p>
+          A <strong>Fluxxo Solutions</strong> é nossa parceira no desenvolvimento de sistemas, sites, planilhas personalizadas e soluções 
+          digitais sob medida. Sua expertise em tecnologia garante inovação, modernidade e eficiência para os 
+          projetos de nossos clientes, fortalecendo nossa entrega e ampliando nosso alcance. Entre em contato 
+          com a Fluxxo Solutions para transformar suas ideias em realidade digital.
+        </p>
+
+        <div class="btn-container">
+        <a 
+          href="https://wa.me/5583921457757?text=Olá!%20Tenho%20interesse%20em%20saber%20mais%20sobre%20a%20Fluxxo%20Solutions." 
+          target="_blank" 
+          class="btn-whatsapp">
+          Faça um Orçamento
+        </a></div>
+        
+      </div>
+    </div>
+  </section>
+
+   <footer id="footer">
+    <p>&copy; 2025 Fluxxo. Todos os direitos reservados.</p>
+    <p>Desenvolvido por <a href="https://www.linkedin.com/company/fluxxo-solutions/?viewAsMember=true" target="_blank">Fluxxo Solutions</a></p>
+  </footer>
+
+  <!-- Script do Menu -->
+  <script>
+    const btnMenu = document.getElementById('btn-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    btnMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      document.body.classList.toggle('body-no-scroll', navLinks.classList.contains('show'));
+    });
+
+    // Fechar menu ao clicar fora
+    window.addEventListener('click', function (event) {
+      if (
+        navLinks.classList.contains('show') &&
+        !navLinks.contains(event.target) &&
+        event.target !== btnMenu
+      ) {
+        navLinks.classList.remove('show');
+        document.body.classList.remove('body-no-scroll');
+      }
+    });
+
+    
+    
+document.addEventListener("DOMContentLoaded", () => {
+      const elementsToReveal = document.querySelectorAll(".logo, main, .intro, footer, header");
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+  
+      elementsToReveal.forEach(el => observer.observe(el));
+    });
+
+    // Inicializar AOS (animações)
+    AOS.init();
+  </script>
+</body>
+</html>
