@@ -266,7 +266,73 @@ footer a:hover {
   }
 }
 
+@media (max-width: 1200px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+
+  .steps {
+    gap: 20px;
+  }
+footer {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1.5rem;
+  }
+  .sobre-nos {
+    padding: 40px 15px;
+  }
+footer {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+}
+
+/* Celulares grandes (até 768px) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: #fafaff;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    gap: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+}
+
 @media (max-width: 480px) {
+  nav a {
+    padding: 1rem;
+    font-size: 14px;
+  }
   .card-inner {
     height: clamp(180px, 20vh, 200px);
   }
